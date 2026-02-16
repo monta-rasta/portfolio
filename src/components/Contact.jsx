@@ -27,7 +27,6 @@ const Contact = () => {
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: '' }));
     }
-    
   };
 
   const validateForm = () => {

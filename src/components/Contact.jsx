@@ -190,7 +190,7 @@ const Contact = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="NAME_STRING"
+                      placeholder="Your Name"
                       className={`bg-slate-950/50 border-slate-700 text-slate-200 focus:border-[#00D9FF] focus:ring-1 focus:ring-[#00D9FF] placeholder:text-slate-600 font-mono transition-all ${errors.name ? 'border-red-500' : ''}`}
                     />
                   </div>
@@ -203,7 +203,7 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="EMAIL_ADDRESS"
+                      placeholder="Your Email Address"
                       className={`bg-slate-950/50 border-slate-700 text-slate-200 focus:border-[#00D9FF] focus:ring-1 focus:ring-[#00D9FF] placeholder:text-slate-600 font-mono transition-all ${errors.email ? 'border-red-500' : ''}`}
                     />
                   </div>
@@ -211,28 +211,28 @@ const Contact = () => {
 
                 <div className="space-y-2">
                   <label htmlFor="subject" className="text-xs font-mono text-cyan-400 uppercase tracking-wider">
-                    Topic Header
+                    Topic Title
                   </label>
                   <Input
                     id="subject"
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    placeholder="SUBJECT_LINE"
+                    placeholder="Subject"
                     className={`bg-slate-950/50 border-slate-700 text-slate-200 focus:border-[#00D9FF] focus:ring-1 focus:ring-[#00D9FF] placeholder:text-slate-600 font-mono transition-all ${errors.subject ? 'border-red-500' : ''}`}
                   />
                 </div>
 
                 <div className="space-y-2">
                   <label htmlFor="message" className="text-xs font-mono text-cyan-400 uppercase tracking-wider">
-                    Data Payload
+                    Message
                   </label>
                   <Textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="ENTER_MESSAGE_BODY..."
+                    placeholder="Enter Message Body..."
                     className={`min-h-[150px] bg-slate-950/50 border-slate-700 text-slate-200 focus:border-[#00D9FF] focus:ring-1 focus:ring-[#00D9FF] placeholder:text-slate-600 font-mono transition-all ${errors.message ? 'border-red-500' : ''}`}
                   />
                 </div>
@@ -243,7 +243,7 @@ const Contact = () => {
                   className="w-full bg-gradient-to-r from-[#00D9FF] to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold tracking-wide group relative overflow-hidden"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
-                    TRANSMIT DATA
+                    Send Data
                     <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </span>
                 </Button>

@@ -12,7 +12,7 @@ const Testimonials = () => {
     {
       name: 'Donia Kssouri',
       role: 'Sales Manager',
-      content: 'Working with this Montassar was an absolute pleasure. They delivered our project ahead of schedule and exceeded all expectations.',
+      content: 'Working with Montassar was an absolute pleasure. He delivered our project ahead of schedule and exceeded all expectations.',
       rating: 5,
       avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330',
       tag: 'Enterprise'
@@ -28,7 +28,7 @@ const Testimonials = () => {
     {
       name: 'Fadwa Fakhfakh',
       role: 'Dentist',
-      content: 'Incredible technical expertise combined with great communication skills. They understood our vision perfectly and brought it to life with clean, efficient code.',
+      content: 'Incredible technical expertise combined with great communication skills. He understood our vision perfectly and brought it to life with clean, efficient code.',
       rating: 5,
       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb',
       tag: 'Startup'

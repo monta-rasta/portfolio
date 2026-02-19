@@ -244,6 +244,7 @@ const Contact = () => {
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     Send Data
+                    {/* Tiny Test Sync */}
                     <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </span>
                 </Button>

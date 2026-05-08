@@ -260,8 +260,8 @@ export default defineConfig({
 		},
 	},
 	 build: {
-		outDir: 'dist',          // ← Explicitly set (prevents surprises)
-    	emptyOutDir: true,       // ← Forces clean before build (very helpful!)
+		//outDir: 'dist',          // ← Explicitly set (prevents surprises)
+    	//emptyOutDir: true,       // ← Forces clean before build (very helpful!)
 		rollupOptions: {
 			external: [
 				'@babel/parser',

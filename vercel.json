@@ -1,0 +1,9 @@
+{
+  "buildCommand": "npm install --legacy-peer-deps && npx vite build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "installCommand": "npm install",
+  "env": {
+    "NODE_VERSION": "20"
+  }
+}

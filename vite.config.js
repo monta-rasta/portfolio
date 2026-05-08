@@ -259,7 +259,7 @@ export default defineConfig({
 			'@': path.resolve(__dirname, './src'),
 		},
 	},
-	build: {
+	 build: {
 		outDir: 'dist',          // ← Explicitly set (prevents surprises)
     	emptyOutDir: true,       // ← Forces clean before build (very helpful!)
 		rollupOptions: {

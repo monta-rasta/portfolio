@@ -13,11 +13,30 @@ const Testimonials = () => {
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
-        const response = await fetch('/testimonials.json?t=' + Date.now());
+        const timestamp = Date.now();
+        const url = `/testimonials.json?nocache=${timestamp}`;
+        console.log('Fetching testimonials from:', url);
+        
+        const response = await fetch(url, {
+          headers: {
+            'Cache-Control': 'no-cache, no-store, must-revalidate',
+            'Pragma': 'no-cache',
+            'Expires': '0'
+          }
+        });
+        
+        console.log('Fetch response status:', response.status);
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
         const data = await response.json();
+        console.log('Testimonials loaded successfully:', data);
         setTestimonials(data);
       } catch (error) {
         console.error('Failed to load testimonials:', error);
+        setTestimonials([]);
       } finally {
         setLoading(false);
       }

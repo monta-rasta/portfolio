@@ -13,7 +13,7 @@ const Testimonials = () => {
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
-        const response = await fetch('/src/data/testimonials.json?t=' + Date.now());
+        const response = await fetch('/testimonials.json?t=' + Date.now());
         const data = await response.json();
         setTestimonials(data);
       } catch (error) {

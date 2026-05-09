@@ -1,41 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Star, Quote, MessageSquare } from 'lucide-react';
-import testimonials from '../data/testimonials.json';
 
 const Testimonials = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const [testimonials, setTestimonials] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  // Reduced to exactly 3 top testimonials
-  /*const testimonials = [
-    {
-      name: 'Donia Kssouri',
-      role: 'Sales Manager',
-      content: 'Working with Montassar was an absolute pleasure. He delivered our project ahead of schedule and exceeded all expectations.',
-      rating: 5,
-      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330',
-      tag: 'Enterprise'
-    },
-    {
-      name: 'Med Iheb Bellaaj',
-      role: 'Project Manaaaager',
-      content: '..',
-      rating: 5,
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d',
-      tag: 'Analytics'
-    },
-    {
-      name: 'Fadwa Fakhfakh',
-      role: 'Dentist',
-      content: 'Incredible technical expertise combined with great communication skills. He understood our vision perfectly and brought it to life with clean, efficient code.',
-      rating: 5,
-      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb',
-      tag: 'Startup'
-    }
-  ];*/
-    // Testimonials imported from JSON file
+  // Fetch testimonials data from JSON file at runtime
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        const response = await fetch('/src/data/testimonials.json?t=' + Date.now());
+        const data = await response.json();
+        setTestimonials(data);
+      } catch (error) {
+        console.error('Failed to load testimonials:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    fetchTestimonials();
+  }, []);
 
   return (
     <section id="testimonials" className="py-24 bg-slate-900 relative overflow-hidden">
@@ -66,7 +55,10 @@ const Testimonials = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
+          {loading ? (
+            <div className="col-span-3 text-center text-slate-400">Loading testimonials...</div>
+          ) : (
+            testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
               initial={{ opacity: 0, y: 50 }}
@@ -111,7 +103,8 @@ const Testimonials = () => {
                 </div>
               </div>
             </motion.div>
-          ))}
+            ))
+          )}
         </div>
       </div>
     </section>

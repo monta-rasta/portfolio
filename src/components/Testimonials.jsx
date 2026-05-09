@@ -20,7 +20,7 @@ const Testimonials = () => {
     {
       name: 'Med Iheb Bellaaj',
       role: 'Project Manager',
-      content: '.',
+      content: '..',
       rating: 5,
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d',
       tag: 'Analytics'

@@ -44,7 +44,7 @@ const About = () => {
             {/* Main Image with White Background */}
             <div className="relative z-10 bg-white p-2 rounded-lg rotate-3 group-hover:rotate-0 transition-transform duration-500">
               <img
-                src="https://horizons-cdn.hostinger.com/6fd89a8e-5eac-4cce-a3eb-21812ab424e9/32bb9eeaced0f6007e388a6e672ecb89.jpg"
+                src="/monta-pic.JPG"
                 alt="IT Professional"
                 className="w-full h-auto rounded-lg shadow-2xl filter grayscale group-hover:grayscale-0 transition-all duration-500"
               />

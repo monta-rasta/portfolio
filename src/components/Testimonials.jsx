@@ -2,13 +2,14 @@ import React from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Star, Quote, MessageSquare } from 'lucide-react';
+import testimonials from '../data/testimonials.json';
 
 const Testimonials = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   // Reduced to exactly 3 top testimonials
-  const testimonials = [
+  /*const testimonials = [
     {
       name: 'Donia Kssouri',
       role: 'Sales Manager',
@@ -19,7 +20,7 @@ const Testimonials = () => {
     },
     {
       name: 'Med Iheb Bellaaj',
-      role: 'Project Manager',
+      role: 'Project Manaaaager',
       content: '..',
       rating: 5,
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d',
@@ -33,7 +34,8 @@ const Testimonials = () => {
       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb',
       tag: 'Startup'
     }
-  ];
+  ];*/
+    // Testimonials imported from JSON file
 
   return (
     <section id="testimonials" className="py-24 bg-slate-900 relative overflow-hidden">
